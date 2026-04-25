@@ -1,22 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>¡Verificado!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correo Confirmado</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
-        .btn { background: #3ecf8e; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            color: #1c1c1c;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        /* Estilo del círculo y palomita */
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #3ecf8e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(62, 207, 142, 0.3);
+            animation: scaleIn 0.5s ease-out;
+        }
+        .checkmark {
+            width: 40px;
+            height: 40px;
+            fill: none;
+            stroke: white;
+            stroke-width: 5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawCheck 0.8s ease-in-out forwards 0.5s;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Animaciones */
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
     </style>
 </head>
 <body>
-    <h1>✅ ¡Correo verificado!</h1>
-    <p>Tu cuenta ha sido activada con éxito.</p>
-    <br>
-    <!-- Este enlace intenta abrir tu app de Flutter automáticamente -->
-    <a href="mi-app://callback/" class="btn">Volver a la aplicación</a>
-    
+    <div class="container">
+        <h1>Correo confirmado</h1>
+        
+        <div class="success-icon">
+            <svg class="checkmark" viewBox="0 0 52 52">
+                <path d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+
+        <p>Ya puedes volver a la app</p>
+    </div>
+
     <script>
-        // Opcional: Redirigir automáticamente a la app tras 3 segundos
-        setTimeout(() => {
+        // Redirige a la app automáticamente después de 3 segundos
+        setTimeout(function() {
             window.location.href = "mi-app://callback/";
         }, 3000);
     </script>
