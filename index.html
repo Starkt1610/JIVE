@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>¡Verificado!</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .btn { background: #3ecf8e; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>✅ ¡Correo verificado!</h1>
+    <p>Tu cuenta ha sido activada con éxito.</p>
+    <br>
+    <!-- Este enlace intenta abrir tu app de Flutter automáticamente -->
+    <a href="mi-app://callback/" class="btn">Volver a la aplicación</a>
+    
+    <script>
+        // Opcional: Redirigir automáticamente a la app tras 3 segundos
+        setTimeout(() => {
+            window.location.href = "mi-app://callback/";
+        }, 3000);
+    </script>
+</body>
+</html>
